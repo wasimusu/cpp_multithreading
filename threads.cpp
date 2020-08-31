@@ -1,29 +1,41 @@
 /**
- * Collecting returns from functions
- * You don't have to change your function to collect the value returned by the function
+ * Description: Run multiple instance of an expensive function simultaneously
  *
- * Use future to collect the value.
+ * Usage: Run expensive functions simultaneously.
+ *
+ * If processing two images are independent, then you can process them simultaneously. You do not have to wait until
+ * processing one image is over to process another image.
  * */
-#include <iostream>
+
 #include <thread>
+#include <chrono>
 #include <future>
+#include <iostream>
 
 using namespace std;
+mutex mu;
 
-int some_op(int value) {
-    // Pretend to do some compute intensive task
-    this_thread::sleep_for(chrono::milliseconds(rand() % 1000));
+void compute_factorial(int number) {
+  long long result = 1;
+  for (size_t i = 2; i <= number; i++) result *= i;
 
-    // Don't worry about overflow here.
-    return value * value;
+  // Lock resources that are shared between threads.
+  // This is not the best way to lock. See readme.
+  mu.lock();
+  std::cout << "Factorial of " << number << " : " << result << std::endl;
+  mu.unlock();
 }
 
-
 int main() {
-    int x1 = 4, x2 = 5;
-    future<int> f1 = async(launch::async, some_op, x1);
-    auto f2 = async(launch::async, some_op, x2);
-    cout << "Square of " << x1 << ": " << f1.get() << endl;
-    cout << "Square of " << x2 << ": " << f2.get() << endl;
-    return 0;
+  int num1 = 5;
+  int num2 = 6;
+
+  // Compute factorial of two numbers simultaneously
+  thread t1(compute_factorial, num1);
+  thread t2(compute_factorial, num2);
+
+  t1.join();
+  t2.join();
+
+  return 0;
 }
