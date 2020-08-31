@@ -11,7 +11,7 @@ This repository has two objectives:
 * Check if a function completes within stipulated time or not: [timeouts.cpp](timeouts.cpp)
 * Different types of locking mechanisms: [locking.cpp](locking.cpp)
 * Syncing cameras to take pictures simulatenously: 
-    * [sync_devices_yeild.cpp](sync_devices_yeild.cpp)
+    * [sync_devices_yeild.cpp](sync_devices_yield.cpp)
     * [sync_devices_condition_variable.cpp](sync_devices_condition_variable.cpp)
 * What are deadlocks and how do they happen? [deadlock.cpp](deadlock.cpp)
 
