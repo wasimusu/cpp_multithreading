@@ -4,7 +4,7 @@
  * Usage: Run expensive functions simultaneously.
  *
  * If processing two images are independent, then you can process them simultaneously. You do not have to wait until
- * processing one image is over to process another image.
+ * processing one image is over to process another image. It reduces the total runtime.
  * */
 
 #include <thread>
