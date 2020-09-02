@@ -1,12 +1,8 @@
 /**
  * Objective: Build thread safe counters
- * Method: Use atomic types for thread safe operations
+ * Method: Use atomic types or locks for thread safe (increment) operations
  *
- *
- * Also demonstrates the concept of data race.
- * Data race is multiple threads trying to manipulating shared data at once.
- *
- * If we reduce the value to which we are counting, both thread safe and unsafe methods may be able to achieve the
+ * If we reduce the target value to which we are counting, both thread safe and unsafe methods may be able to achieve the
  * intended result. This makes it harder to debug multi-threaded applications.
  * */
 
@@ -23,14 +19,6 @@ int counter2 = 0; // to demonstrate data race
 int counter3 = 0; // to demonstrate locks to prevent data race as an alternative to atomics
 mutex mu;
 
-void unsafe_increment() {
-  // Does not use atomic counter or locks
-  // The value of counter2 could be changed from multiple threads leading to data race and unsafe increment
-
-  for (size_t j = 0; j < 1000000; j++) {
-    ++counter2;
-  }
-}
 
 void safe_increment_atomic() {
   // uses atomic counter to count
@@ -62,19 +50,8 @@ void thread_safe_counter() {
   cout << "safe counter:\t" << counter << "\tTarget value 2000000" << endl;
 }
 
-void thread_unsafe_counter() {
-  // Uses thread unsafe increment method to count
-
-  std::thread t1(unsafe_increment);
-  std::thread t2(unsafe_increment);
-  t1.join();
-  t2.join();
-  assert(counter2 <= 2 * 1000000);
-  cout << "Unsafe counter:\t" << counter2 << "\tTarget value 2000000" << endl;
-}
 
 int main() {
   thread_safe_counter();
-  thread_unsafe_counter();
   return 0;
 }

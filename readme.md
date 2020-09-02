@@ -7,7 +7,8 @@ This repository has two objectives:
 ### Some of the concepts demonstrated
 * Simple usage of threads to do tasks simulatenously: [threads.cpp](threads.cpp)
 * Collecting return values from threads: [return_from_function.cpp](return_from_function.cpp)
-* Data race and counters: [thread_safe_counters.cpp](thread_safe_counters.cpp)
+* Data race occurs when two or more threads are trying to manipulate same shared data at the same time: [data_race.cpp](data_race.cpp)
+* Counters should work regardless of how many threads are accessing it. See [thread_safe_counters.cpp](thread_safe_counters.cpp)
 * Check if a function completes within stipulated time or not: [timeouts.cpp](timeouts.cpp)
 * Different types of locking mechanisms: [locking.cpp](locking.cpp)
 * Syncing cameras to take pictures simulatenously: 
