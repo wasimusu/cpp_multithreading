@@ -34,7 +34,9 @@ void capture_image(const int device_id) {
     lock.unlock();
 
     // Pretend to do some work (capture image)
+    // ..
     this_thread::sleep_for(chrono::milliseconds(rand() % 1000));
+    // ..
 }
 
 int main() {
