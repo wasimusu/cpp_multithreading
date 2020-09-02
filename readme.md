@@ -5,16 +5,16 @@ This repository has two objectives:
 * Demonstrate the C++ multi-threading concepts through code samples.
 
 ### Some of the concepts demonstrated
-* Simple usage of threads to do tasks simulatenously: [threads.cpp](threads.cpp)
-* Collecting return values from threads: [return_from_function.cpp](return_from_function.cpp)
-* Data race occurs when two or more threads are trying to manipulate same shared data at the same time: [data_race.cpp](data_race.cpp)
-* Counters should work regardless of how many threads are accessing it. See [thread_safe_counters.cpp](thread_safe_counters.cpp)
-* Check if a function completes within stipulated time or not: [timeouts.cpp](timeouts.cpp)
-* Different types of locking mechanisms: [locking.cpp](locking.cpp)
-* Syncing cameras to take pictures simulatenously: 
+1. Simple usage of threads to do tasks simulatenously: [threads.cpp](threads.cpp)
+2. Collecting return values from threads: [return_from_function.cpp](return_from_function.cpp)
+3. Data race occurs when two or more threads are trying to manipulate same shared data at the same time: [data_race.cpp](data_race.cpp)
+4. Different types of locking mechanisms: [locking.cpp](locking.cpp)
+5. Counters should work regardless of how many threads are accessing it. See [thread_safe_counters.cpp](thread_safe_counters.cpp)
+6. Check if a function completes within stipulated time or not: [timeouts.cpp](timeouts.cpp)
+7. Syncing cameras to take pictures simultaneously: 
     * [sync_devices_yeild.cpp](sync_devices_yield.cpp)
     * [sync_devices_condition_variable.cpp](sync_devices_condition_variable.cpp)
-* What are deadlocks and how do they happen? [deadlock.cpp](deadlock.cpp)
+8. What are deadlocks and how do they happen? [deadlock.cpp](deadlock.cpp)
 
 ### Upcoming
 * Consumer producer pattern for threads
