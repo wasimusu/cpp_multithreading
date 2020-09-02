@@ -12,8 +12,11 @@
 using namespace std;
 
 void user_function() {
-  // Act like you're some compute intensive function
-  this_thread::sleep_for(chrono::milliseconds(rand() % 400)); // Acting busy
+  // Wait between 0 to 399ms.
+  auto wait_time = chrono::milliseconds(rand() % 400);
+
+  // This mimics that the user function takes between 0-399ms to execute.
+  this_thread::sleep_for(wait_time);
 }
 
 int main() {
