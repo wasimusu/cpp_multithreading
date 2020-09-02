@@ -1,10 +1,10 @@
 /**
- * Description: Run multiple instance of an expensive function simultaneously
+ * Description: Multi-threading is used to achieve full resource utilization that single-threaded applications cannot achieve.
+ * For instance, processing a single image at a time is only taking up on 20% of the CPU resource. Processing 4 or 5 images
+ * simulatenously may lead to full utilization of CPU and shorter wait time for users.
  *
- * Usage: Run expensive functions simultaneously.
- *
- * If processing two images are independent, then you can process them simultaneously. You do not have to wait until
- * processing one image is over to process another image. It reduces the total runtime.
+ * Also, if your program has separate independent functions instead of waiting for function to finish to execute other
+ * functions in a serial fashion, you can execute all of the functions in parallel using multi-threading.
  * */
 
 #include <thread>

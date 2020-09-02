@@ -5,7 +5,7 @@ This repository has two objectives:
 * Demonstrate the C++ multi-threading concepts through code samples.
 
 ### Some of the concepts demonstrated
-1. Simple usage of threads to do tasks simulatenously: [threads.cpp](threads.cpp)
+1. A simple usage of threads: [threads.cpp](threads.cpp)
 2. Collecting return values from threads: [return_from_function.cpp](return_from_function.cpp)
 3. Data race occurs when two or more threads are trying to manipulate same shared data at the same time: [data_race.cpp](data_race.cpp)
 4. Different types of locking mechanisms: [locking.cpp](locking.cpp)

@@ -15,7 +15,7 @@ void user_function() {
   // Wait between 0 to 399ms.
   auto wait_time = chrono::milliseconds(rand() % 400);
 
-  // This mimics that the user function takes between 0-399ms to execute.
+  // This mimics that the user function takes between 0-399 ms to execute.
   this_thread::sleep_for(wait_time);
 }
 
