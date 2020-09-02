@@ -1,7 +1,7 @@
 /**
  * Description: Multi-threading is used to achieve full resource utilization that single-threaded applications cannot achieve.
- * For instance, processing a single image at a time is only taking up on 20% of the CPU resource. Processing 4 or 5 images
- * simulatenously may lead to full utilization of CPU and shorter wait time for users.
+ * For instance, if processing a single image at a time is only taking up on 20% of the CPU resource, then processing 4 or 5 images
+ * simulatenously may lead to full utilization of the CPU resource and shorter wait time for users.
  *
  * Also, if your program has separate independent functions instead of waiting for function to finish to execute other
  * functions in a serial fashion, you can execute all of the functions in parallel using multi-threading.
