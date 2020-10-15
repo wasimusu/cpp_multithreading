@@ -5,7 +5,9 @@
  * Use future to collect the value.
  *
  * Another way to collect the return value would be to pass by reference.
- * Passing by reference in a thread is a bit tricky. use std::ref(arg_name) to pass by reference in threads.
+ * Passing by reference in a thread is a bit tricky. 
+ * By default, all arguments (even references) are passed by value.
+ * Use std::ref(arg_name) to pass by reference in threads.
  *
  * */
 #include <iostream>
